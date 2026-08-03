@@ -171,6 +171,10 @@
 		14539EA829D42FFD0071D45D /* appinfo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 14539E0529D42FFD0071D45D /* appinfo.txt */; };
 		14539EA929D42FFD0071D45D /* NNTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14539E0629D42FFD0071D45D /* NNTabViewController.swift */; };
 		14539EAA29D42FFD0071D45D /* Skull.png in Resources */ = {isa = PBXBuildFile; fileRef = 14539E0729D42FFD0071D45D /* Skull.png */; };
+		1456B3BF3020855000D14691 /* NSImage+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1456B3AE3020855000D14691 /* NSImage+Ext.m */; };
+		1456B3C03020855000D14691 /* NNLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1456B3B53020855000D14691 /* NNLabel.m */; };
+		1456B3C13020855000D14691 /* NSColor+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1456B3AC3020855000D14691 /* NSColor+Ext.m */; };
+		1456B3C23020855000D14691 /* NNButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1456B3AA3020855000D14691 /* NNButton.m */; };
 		4A29C509DA5D239A86702F68 /* Pods_MacTemplet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A4493C44E3DCEBA7F5D599 /* Pods_MacTemplet.framework */; };
 /* End PBXBuildFile section */
 
@@ -401,6 +405,16 @@
 		14539E0529D42FFD0071D45D /* appinfo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = appinfo.txt; sourceTree = "<group>"; };
 		14539E0629D42FFD0071D45D /* NNTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NNTabViewController.swift; sourceTree = "<group>"; };
 		14539E0729D42FFD0071D45D /* Skull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Skull.png; sourceTree = "<group>"; };
+		1456B3A93020855000D14691 /* NNButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNButton.h; sourceTree = "<group>"; };
+		1456B3AA3020855000D14691 /* NNButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNButton.m; sourceTree = "<group>"; };
+		1456B3AB3020855000D14691 /* NSColor+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSColor+Ext.h"; sourceTree = "<group>"; };
+		1456B3AC3020855000D14691 /* NSColor+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Ext.m"; sourceTree = "<group>"; };
+		1456B3AD3020855000D14691 /* NSImage+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSImage+Ext.h"; sourceTree = "<group>"; };
+		1456B3AE3020855000D14691 /* NSImage+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Ext.m"; sourceTree = "<group>"; };
+		1456B3B23020855000D14691 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1456B3B43020855000D14691 /* NNLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNLabel.h; sourceTree = "<group>"; };
+		1456B3B53020855000D14691 /* NNLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNLabel.m; sourceTree = "<group>"; };
+		1456B3B93020855000D14691 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49A4493C44E3DCEBA7F5D599 /* Pods_MacTemplet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MacTemplet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE75986FEF6C56F8F47A888 /* Pods-MacTemplet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacTemplet.release.xcconfig"; path = "Target Support Files/Pods-MacTemplet/Pods-MacTemplet.release.xcconfig"; sourceTree = "<group>"; };
 		C03CBB222F7A4F547627979E /* Pods-MacTemplet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacTemplet.debug.xcconfig"; path = "Target Support Files/Pods-MacTemplet/Pods-MacTemplet.debug.xcconfig"; sourceTree = "<group>"; };
@@ -439,6 +453,8 @@
 		14539B5729D4206E0071D45D /* MacTemplet */ = {
 			isa = PBXGroup;
 			children = (
+				1456B3B33020855000D14691 /* NNButton */,
+				1456B3BA3020855000D14691 /* NNLabel */,
 				14539D9629D42FFA0071D45D /* BatchCreateFiles */,
 				14539DC229D42FFC0071D45D /* CocoaExtensions */,
 				14539D3029D42FFA0071D45D /* Controller */,
@@ -844,6 +860,46 @@
 			name = Resource;
 			sourceTree = "<group>";
 		};
+		1456B3AF3020855000D14691 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1456B3A93020855000D14691 /* NNButton.h */,
+				1456B3AA3020855000D14691 /* NNButton.m */,
+				1456B3AB3020855000D14691 /* NSColor+Ext.h */,
+				1456B3AC3020855000D14691 /* NSColor+Ext.m */,
+				1456B3AD3020855000D14691 /* NSImage+Ext.h */,
+				1456B3AE3020855000D14691 /* NSImage+Ext.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1456B3B33020855000D14691 /* NNButton */ = {
+			isa = PBXGroup;
+			children = (
+				1456B3AF3020855000D14691 /* Classes */,
+				1456B3B23020855000D14691 /* README.md */,
+			);
+			path = NNButton;
+			sourceTree = "<group>";
+		};
+		1456B3B63020855000D14691 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1456B3B43020855000D14691 /* NNLabel.h */,
+				1456B3B53020855000D14691 /* NNLabel.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1456B3BA3020855000D14691 /* NNLabel */ = {
+			isa = PBXGroup;
+			children = (
+				1456B3B63020855000D14691 /* Classes */,
+				1456B3B93020855000D14691 /* README.md */,
+			);
+			path = NNLabel;
+			sourceTree = "<group>";
+		};
 		84C01C17D09485BC9478A9E9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -959,9 +1015,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MacTemplet/Pods-MacTemplet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MacTemplet/Pods-MacTemplet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1008,6 +1068,10 @@
 				14539EA129D42FFD0071D45D /* NSCTViewItemOne.m in Sources */,
 				14539E8529D42FFD0071D45D /* NSTextFieldCell+Hook.m in Sources */,
 				14539E1729D42FFD0071D45D /* NSApplication+Ext.m in Sources */,
+				1456B3BF3020855000D14691 /* NSImage+Ext.m in Sources */,
+				1456B3C03020855000D14691 /* NNLabel.m in Sources */,
+				1456B3C13020855000D14691 /* NSColor+Ext.m in Sources */,
+				1456B3C23020855000D14691 /* NNButton.m in Sources */,
 				14539E8A29D42FFD0071D45D /* NSView+Hook.m in Sources */,
 				14539E2029D42FFD0071D45D /* NNTextViewContoller.m in Sources */,
 				14539E8629D42FFD0071D45D /* NSViewController+Hook.m in Sources */,

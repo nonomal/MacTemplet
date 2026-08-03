@@ -16,8 +16,6 @@ def common_pods
       
   pod 'YYModel'
   pod 'HandyJSON'
-  pod 'NNButton'
-  pod 'NNLabel'
 
   pod 'SwiftExpand'
   pod 'Then'
