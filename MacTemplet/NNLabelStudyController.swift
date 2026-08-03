@@ -9,7 +9,6 @@
 import Cocoa
 import SnapKit
 import SwiftExpand
-//import NNLabel
 
 class NNLabelStudyController: NSViewController {
     

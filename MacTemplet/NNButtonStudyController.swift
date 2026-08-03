@@ -8,7 +8,6 @@
 
 import Cocoa
 import SwiftExpand
-import NNButton
 
 
 class NNButtonStudyController: NSViewController {
