@@ -96,10 +96,12 @@
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
-    [NSUserDefaults.standardUserDefaults setObject: NSStringFromRect(self.window.frame) forKey:kMainWindowFrame];
-    [NSUserDefaults.standardUserDefaults synchronize];
-    
-//    DDLog(@"%@", NSStringFromRect(self.window.frame));
+    // 退出时 window 可能已关闭为 nil；对 nil 取 NSRect(frame) 会 EXC_BAD_ACCESS
+    NSWindow *window = _window ?: NSApp.mainWindow ?: NSApp.windows.firstObject;
+    if (window) {
+        [NSUserDefaults.standardUserDefaults setObject:NSStringFromRect(window.frame) forKey:kMainWindowFrame];
+        [NSUserDefaults.standardUserDefaults synchronize];
+    }
 }
 /// 点击dock图标重新弹出窗口方法
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {

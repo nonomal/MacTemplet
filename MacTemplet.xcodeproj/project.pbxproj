@@ -175,6 +175,7 @@
 		1456B3C03020855000D14691 /* NNLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1456B3B53020855000D14691 /* NNLabel.m */; };
 		1456B3C13020855000D14691 /* NSColor+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1456B3AC3020855000D14691 /* NSColor+Ext.m */; };
 		1456B3C23020855000D14691 /* NNButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1456B3AA3020855000D14691 /* NNButton.m */; };
+		1456B3C43020893600D14691 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 1456B3C33020893600D14691 /* CHANGELOG.md */; };
 		4A29C509DA5D239A86702F68 /* Pods_MacTemplet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A4493C44E3DCEBA7F5D599 /* Pods_MacTemplet.framework */; };
 /* End PBXBuildFile section */
 
@@ -415,6 +416,7 @@
 		1456B3B43020855000D14691 /* NNLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNLabel.h; sourceTree = "<group>"; };
 		1456B3B53020855000D14691 /* NNLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNLabel.m; sourceTree = "<group>"; };
 		1456B3B93020855000D14691 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1456B3C33020893600D14691 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		49A4493C44E3DCEBA7F5D599 /* Pods_MacTemplet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MacTemplet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE75986FEF6C56F8F47A888 /* Pods-MacTemplet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacTemplet.release.xcconfig"; path = "Target Support Files/Pods-MacTemplet/Pods-MacTemplet.release.xcconfig"; sourceTree = "<group>"; };
 		C03CBB222F7A4F547627979E /* Pods-MacTemplet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacTemplet.debug.xcconfig"; path = "Target Support Files/Pods-MacTemplet/Pods-MacTemplet.debug.xcconfig"; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 		14539B4C29D4206E0071D45D = {
 			isa = PBXGroup;
 			children = (
+				1456B3C33020893600D14691 /* CHANGELOG.md */,
 				14539B5729D4206E0071D45D /* MacTemplet */,
 				14539B5629D4206E0071D45D /* Products */,
 				84C01C17D09485BC9478A9E9 /* Pods */,
@@ -1000,6 +1003,7 @@
 				14539E6929D42FFD0071D45D /* THML5常用控件总结.txt in Resources */,
 				14539E1329D42FFD0071D45D /* Swift-YYModel.json in Resources */,
 				14539E7D29D42FFD0071D45D /* 02@3x.png in Resources */,
+				1456B3C43020893600D14691 /* CHANGELOG.md in Resources */,
 				14539E9229D42FFD0071D45D /* blocks.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

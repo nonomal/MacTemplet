@@ -51,9 +51,12 @@ static NSString *kDefaultTabIndex = @"kDefaultTabIndex";
         make.bottom.equalTo(self.view).offset(-kY_GAP);
     }];
     
-    // 保存窗口尺寸
-    [NSUserDefaults.standardUserDefaults setObject: NSStringFromRect(NSApp.keyWindow.frame) forKey:kMainWindowFrame];
-    [NSUserDefaults.standardUserDefaults synchronize];
+    // 保存窗口尺寸（keyWindow 在 layout 阶段可能为 nil）
+    NSWindow *window = self.view.window ?: NSApp.keyWindow;
+    if (window) {
+        [NSUserDefaults.standardUserDefaults setObject:NSStringFromRect(window.frame) forKey:kMainWindowFrame];
+        [NSUserDefaults.standardUserDefaults synchronize];
+    }
 }
 
 
