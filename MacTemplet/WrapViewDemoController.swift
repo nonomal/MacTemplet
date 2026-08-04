@@ -93,9 +93,9 @@ import SwiftExpand
             let button = NSButton(title: title, target: self, action: #selector(onDemoButton(_:)))
             button.tag = index
             let cell = NNButtonCell(textCell: title)
-            cell.contentInsets = NSEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
             button.cell = cell
-            button.bezelStyle = .rounded
+            button.bezelStyle = .smallSquare
+            cell.cornerRadius = 6
             button.title = title
             button.target = self
             button.action = #selector(onDemoButton(_:))

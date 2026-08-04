@@ -103,17 +103,17 @@ import SwiftExpand
             let button = NSButton(title: entry.title, target: self, action: entry.action)
             button.tag = offset
             let cell = NNButtonCell(textCell: entry.title)
-            cell.contentInsets = NSEdgeInsets(top: 20, left: 8, bottom: 20, right: 8)
+            cell.cornerRadius = 6
             button.cell = cell
-            button.bezelStyle = .rounded
+            button.bezelStyle = .smallSquare
             button.title = entry.title
             button.target = self
             button.action = entry.action
             button.sizeToFit()
-            button.wantsLayer = true
-            button.layer?.borderWidth = 1
-            button.layer?.borderColor = NSColor.systemBlue.cgColor
-            button.layer?.cornerRadius = 4
+//            button.wantsLayer = true
+//            button.layer?.borderWidth = 1
+//            button.layer?.borderColor = NSColor.systemBlue.cgColor
+//            button.layer?.cornerRadius = 4
             return button
         }
         wrapView.replaceArrangedSubviews(itemList)

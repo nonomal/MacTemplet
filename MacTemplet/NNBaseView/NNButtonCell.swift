@@ -12,9 +12,17 @@ import Cocoa
 @objcMembers
 class NNButtonCell: NSButtonCell {
 
-    /// top / left / bottom / right，默认 {6, 8, 6, 8}
-    var contentInsets = NSEdgeInsets(top: 6, left: 8, bottom: 6, right: 8) {
+    /// top / left / bottom / right，默认 {4, 8, 4, 8},仅 bezelStyle = .smallSquare 生效
+    var contentInsets = NSEdgeInsets(top: 4, left: 8, bottom: 4, right: 8) {
         didSet { invalidateControlSize() }
+    }
+
+    /// 圆角半径，默认 0（不圆角）。> 0 时在 cell 层绘制圆角 bezel 并裁剪内容。
+    var cornerRadius: CGFloat = 0 {
+        didSet {
+            guard cornerRadius != oldValue else { return }
+            controlView?.needsDisplay = true
+        }
     }
 
     override init(textCell string: String) {
@@ -32,6 +40,7 @@ class NNButtonCell: NSButtonCell {
     override func copy(with zone: NSZone? = nil) -> Any {
         let copied = super.copy(with: zone) as! NNButtonCell
         copied.contentInsets = contentInsets
+        copied.cornerRadius = cornerRadius
         return copied
     }
 
@@ -99,6 +108,43 @@ class NNButtonCell: NSButtonCell {
         size.width += contentInsets.left + contentInsets.right
         size.height += contentInsets.top + contentInsets.bottom
         return NSSize(width: ceil(size.width), height: ceil(size.height))
+    }
+
+    private func roundedPath(in rect: NSRect) -> NSBezierPath {
+        NSBezierPath(roundedRect: rect, xRadius: cornerRadius, yRadius: cornerRadius)
+    }
+
+    override func draw(withFrame cellFrame: NSRect, in controlView: NSView) {
+        guard cornerRadius > 0 else {
+            super.draw(withFrame: cellFrame, in: controlView)
+            return
+        }
+
+        NSGraphicsContext.saveGraphicsState()
+        roundedPath(in: cellFrame).addClip()
+        super.draw(withFrame: cellFrame, in: controlView)
+        NSGraphicsContext.restoreGraphicsState()
+    }
+
+    override func drawBezel(withFrame cellFrame: NSRect, in controlView: NSView) {
+        guard cornerRadius > 0 else {
+            super.drawBezel(withFrame: cellFrame, in: controlView)
+            return
+        }
+
+        let path = roundedPath(in: cellFrame)
+        if !isEnabled {
+            NSColor.controlColor.withAlphaComponent(0.5).setFill()
+        } else if isHighlighted {
+            NSColor.selectedControlColor.setFill()
+        } else {
+            NSColor.controlColor.setFill()
+        }
+        path.fill()
+
+        NSColor.controlShadowColor.setStroke()
+        path.lineWidth = 1
+        path.stroke()
     }
 
     override func drawInterior(withFrame cellFrame: NSRect, in controlView: NSView) {

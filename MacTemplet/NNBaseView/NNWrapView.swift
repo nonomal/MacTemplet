@@ -429,7 +429,7 @@ import Cocoa
     }
 
     private func fullyVisibleButtonSize(_ button: NSButton) -> CGSize {
-        // 优先走 Cell 尺寸（NNButtonCell 已含左右 8 / 上下 6）
+        // 优先走 Cell 尺寸（NNButtonCell 已含 contentInsets）
         if let cell = button.cell as? NSButtonCell {
             let size = cell.cellSize
             if size.width > 0, size.height > 0 {
@@ -445,9 +445,9 @@ import Cocoa
             : NSAttributedString(string: button.title, attributes: attrs)
         let titleSize = title.size()
 
-        // 与 NNButtonCell 默认 contentInsets 对齐：左右 8，上下 6
-        let horizontalPadding: CGFloat = 16
-        let verticalPadding: CGFloat = 12
+        let insets = (button.cell as? NNButtonCell)?.contentInsets ?? NSEdgeInsets()
+        let horizontalPadding = insets.left + insets.right
+        let verticalPadding = insets.top + insets.bottom
 
         var imageSize = CGSize.zero
         if let image = button.image {
