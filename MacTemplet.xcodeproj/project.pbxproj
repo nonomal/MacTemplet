@@ -129,6 +129,7 @@
 		3547CA34E379569431EB58F9 /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4927204A30B620869FE94 /* NSObject+Helper.swift */; };
 		385F159C1B4219EA8DF0D5C9 /* NSObject+CrashProtector.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F9AFA928E059397342B619 /* NSObject+CrashProtector.m */; };
 		43243F41C223AEB41368EE82 /* WrapViewDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E89FC3C69D444809D2B30A /* WrapViewDemoController.swift */; };
+		7C8D9E0F1A2B3C4D5E6F7081 /* NSButtonDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A8C9D0E1F2A3B4C5D6E7F /* NSButtonDemoController.swift */; };
 		4A29C509DA5D239A86702F68 /* Pods_MacTemplet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A4493C44E3DCEBA7F5D599 /* Pods_MacTemplet.framework */; };
 		4B1150BCFF4E786DCC39066B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C7531A34030BD6376DE62 /* ListViewController.swift */; };
 		4BBEE412DF2C0A037821B599 /* NSView+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 694B23FE8F4B6502FC99F041 /* NSView+Hook.m */; };
@@ -301,6 +302,7 @@
 		1BACEA7CFCD4CEAC9F475E99 /* HomeViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		247505FDD551528767A74221 /* AuthorInfoController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthorInfoController.swift; sourceTree = "<group>"; };
 		25E89FC3C69D444809D2B30A /* WrapViewDemoController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WrapViewDemoController.swift; sourceTree = "<group>"; };
+		6B7A8C9D0E1F2A3B4C5D6E7F /* NSButtonDemoController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSButtonDemoController.swift; sourceTree = "<group>"; };
 		2C6F35745ADD07C2E198B6B3 /* DragDropImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DragDropImageView.swift; sourceTree = "<group>"; };
 		2EA9BF662243D2854F00CF9B /* CocoaHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CocoaHooks.swift; sourceTree = "<group>"; };
 		33187EC77496023EA1686506 /* HHButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HHButton.swift; sourceTree = "<group>"; };
@@ -442,6 +444,7 @@
 				142EEDB829D6DCFA0084A41E /* UnderScoreToCamelCase.swift */,
 				14539D2929D42FF90071D45D /* UUTabViewController.swift */,
 				25E89FC3C69D444809D2B30A /* WrapViewDemoController.swift */,
+				6B7A8C9D0E1F2A3B4C5D6E7F /* NSButtonDemoController.swift */,
 				14539DBC29D42FFB0071D45D /* YYModelSwiftController.swift */,
 				14539D9629D42FFA0071D45D /* BatchCreateFiles */,
 				14539DC229D42FFC0071D45D /* CocoaExtensions */,
@@ -1044,6 +1047,7 @@
 				8D159257CF3594504E84DEB8 /* ProppertyLazyController.swift in Sources */,
 				1D8DE7A84385E6371F4C0943 /* TextConvertController.swift in Sources */,
 				43243F41C223AEB41368EE82 /* WrapViewDemoController.swift in Sources */,
+				7C8D9E0F1A2B3C4D5E6F7081 /* NSButtonDemoController.swift in Sources */,
 				9D6F67ADE49D06FE07B2B3AF /* NoodleLineNumberView.m in Sources */,
 				E13082A43C4A8B4B5E39D387 /* NoodleLineNumberMarker.m in Sources */,
 				385F159C1B4219EA8DF0D5C9 /* NSObject+CrashProtector.m in Sources */,

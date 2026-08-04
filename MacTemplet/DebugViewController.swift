@@ -26,6 +26,7 @@ import SwiftExpand
 
     private lazy var entries: [DebugEntry] = [
         DebugEntry("WrapViewDemo", className: "WrapViewDemoController", action: #selector(openAsWindow(_:))),
+        DebugEntry("NSButton Demo", className: "NSButtonDemoController", action: #selector(openAsWindow(_:))),
         DebugEntry("显示 NSToolbar Demo", action: #selector(showNSToolBarWindow(_:))),
         DebugEntry("iOS系统图标转化", className: "UImageBatchCreateContoller", action: #selector(openAsSheet(_:))),
         DebugEntry("其他转化", className: "OtherConvertController", action: #selector(openAsSheet(_:))),

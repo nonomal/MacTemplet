@@ -429,8 +429,14 @@ import Cocoa
     }
 
     private func fullyVisibleButtonSize(_ button: NSButton) -> CGSize {
-        // 优先走 Cell 尺寸（NNButtonCell 已含 contentInsets）
-        if let cell = button.cell as? NSButtonCell {
+        // NNButtonCell：用 forBounds 测量，避免经 NSCell.cellSize 属性产生递归
+        if let nnCell = button.cell as? NNButtonCell {
+            let probe = NSRect(x: 0, y: 0, width: 10_000, height: 10_000)
+            let size = nnCell.cellSize(forBounds: probe)
+            if size.width > 0, size.height > 0 {
+                return CGSize(width: ceil(size.width), height: ceil(size.height))
+            }
+        } else if let cell = button.cell as? NSButtonCell {
             let size = cell.cellSize
             if size.width > 0, size.height > 0 {
                 return CGSize(width: ceil(size.width), height: ceil(size.height))

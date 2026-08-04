@@ -96,18 +96,16 @@ class NNButtonCell: NSButtonCell {
         return NSSize(width: ceil(max(size.width, 0)), height: ceil(max(size.height, 0)))
     }
 
-    /// 系统测量的内容尺寸 + contentInsets，不受当前 control 小 frame 影响。
-    /// 必须用 `super.cellSize(forBounds:)`：访问 `super.cellSize` 会回调本类 `cellSize(forBounds:)` 导致栈溢出。
-    /// 勿用 `greatestFiniteMagnitude` 作测量 bounds：AppKit 会返回 width 0，按钮只剩 padding 宽。
+    /// 内容尺寸 + contentInsets，不受当前 control 小 frame 影响。
+    /// 不可调用 `super.cellSize` / `super.cellSize(forBounds:)`：现代 AppKit 的 `-[NSCell cellSizeForBounds:]`
+    /// 会经 `cellSize` 属性回调本类 override，造成栈溢出（NSButtonDemoController + NNWrapView 必现）。
     private func paddedFittingSize() -> NSSize {
-        let unbounded = NSRect(x: 0, y: 0, width: 10_000, height: 10_000)
-        var size = super.cellSize(forBounds: unbounded)
         let measured = measuredContentSize()
-        size.width = max(size.width, measured.width)
-        size.height = max(size.height, measured.height)
-        size.width += contentInsets.left + contentInsets.right
-        size.height += contentInsets.top + contentInsets.bottom
-        return NSSize(width: ceil(size.width), height: ceil(size.height))
+        var width = max(measured.width, 1)
+        var height = max(measured.height, 22)
+        width += contentInsets.left + contentInsets.right
+        height += contentInsets.top + contentInsets.bottom
+        return NSSize(width: ceil(width), height: ceil(height))
     }
 
     private func roundedPath(in rect: NSRect) -> NSBezierPath {
