@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class NSStackViewController: NSViewController {
+@objcMembers class NSStackViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

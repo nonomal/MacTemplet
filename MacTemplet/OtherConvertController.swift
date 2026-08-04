@@ -9,7 +9,7 @@
 import Cocoa
 import SwiftExpand
 
-class OtherConvertController: NSViewController {
+@objcMembers class OtherConvertController: NSViewController {
     
     lazy var imageView: NSImageView = {
         let view = NSImageView(frame:NSRect(x: 20, y: 20, width: 200, height: 200))

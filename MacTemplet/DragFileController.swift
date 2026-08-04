@@ -11,7 +11,7 @@ import SnapKit
 import SwiftExpand
 
 @available(macOS 10.13, *)
-class DragFileController: NSViewController {
+@objcMembers class DragFileController: NSViewController {
     
     lazy var destinationImageView: NSImageView = {
         let view = NSImageView()

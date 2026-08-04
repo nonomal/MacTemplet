@@ -10,7 +10,7 @@ import Cocoa
 import SnapKit
 import SwiftExpand
 
-class NNLabelStudyController: NSViewController {
+@objcMembers class NNLabelStudyController: NSViewController {
     
 
     lazy var label: NSTextField = {

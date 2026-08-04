@@ -9,7 +9,7 @@
 import Cocoa
 import SwiftExpand
 
-class UImageBatchCreateContoller: NSViewController {
+@objcMembers class UImageBatchCreateContoller: NSViewController {
     
         
     override func viewDidLoad() {

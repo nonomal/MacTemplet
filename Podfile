@@ -17,7 +17,7 @@ def common_pods
   pod 'YYModel'
   pod 'HandyJSON'
 
-  pod 'SwiftExpand'
+  pod 'SwiftExpand', :path => '../SwiftExpand'
   pod 'Then'
   pod 'Highlightr'
 
@@ -31,17 +31,18 @@ end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
-    if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
-      target.build_configurations.each do |config|
-        config.build_settings["CODE_SIGNING_ALLOWED"] = false;
-#        config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '10.13';
-      end
+    target.build_configurations.each do |config|
+#      config.build_settings["CODE_SIGNING_ALLOWED"] = false;
+      config.build_settings['CODE_SIGNING_ALLOWED'] = 'YES'
+      config.build_settings['CODE_SIGN_IDENTITY'] = '-'
+      config.build_settings['CODE_SIGN_IDENTITY[sdk=macosx*]'] = '-'
+      config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '10.13'
     end
   end
   installer.generated_projects.each do |project|
     project.targets.each do |target|
       target.build_configurations.each do |config|
-          config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '10.13';
+        config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '10.13'
       end
     end
   end

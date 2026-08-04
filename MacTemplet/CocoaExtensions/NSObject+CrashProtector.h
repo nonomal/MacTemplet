@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#define CP_OPEN  YES
+// Keep off while debugging UI launch; re-enable when stable.
+#define CP_OPEN  NO
 
 @interface CrashProxy : NSObject
 

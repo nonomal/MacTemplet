@@ -10,7 +10,7 @@ import Cocoa
 import Speech
 
 /// 其他例子集合
-class OthersViewController: NSViewController {
+@objcMembers class OthersViewController: NSViewController {
     
     lazy var tabView: NSTabView = {
         let view = NSTabView()
@@ -23,9 +23,6 @@ class OthersViewController: NSViewController {
     lazy var list: [(NSViewController, String)] = {
         return [(NSOutlineViewController(), "NSOutlineView"),
                 (CollectionViewController(), "Collection"),
-//                (FirstViewController() , "First"),
-//                (ListViewController() , "ListVC"),
-//                (NNListViewController() , "NNListVC"),
                   (NNTextViewContoller(), "NNTextView"),
                   (NSPanelStudyController(), "Files pickAndSave"),
                   (AppIconActionController(), "AppIcon"),
@@ -34,21 +31,16 @@ class OthersViewController: NSViewController {
                   (ShowViewController(), "控制器呈现"),
                   (BookListController(), "折叠分段列表"),
                   (PageControllerDemo(), "PageControllerDemo"),
-
-//                  (NSTestViewController() , "测试模块"),
-//                  (TmpViewController() , "Tmp模块"),
-//                  (NSPanelStudyController() , "NSOpenPanelStud"),
-//                  (NSStackViewController() , "StackView"),
-//                  (MapViewController() , "MapView"),
-//                  (FileController() , "File处理"),
                       ]
     }()
     
 
     // MARK: -life cycle
     override func loadView() {
-        // 设置 ViewController 大小同 mainWindow
-        guard let windowRect = NSApplication.shared.mainWindow?.frame else { return }
+        let fallback = NSRect(x: 0, y: 0,
+                              width: max(NSScreen.main?.frame.width ?? 800, 1) * 0.5,
+                              height: max(NSScreen.main?.frame.height ?? 600, 1) * 0.5)
+        let windowRect = viewWindowFrame() ?? fallback
         view = NSView(frame: windowRect)
         view.wantsLayer = true
     }
@@ -57,17 +49,13 @@ class OthersViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         setupUI()
+        tabView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview().inset(10)
+        }
     }
     
     override func viewDidLayout() {
         super.viewDidLayout()
-        
-        tabView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(10);
-            make.left.equalToSuperview().offset(10);
-            make.right.equalToSuperview().offset(-10);
-            make.bottom.equalToSuperview().offset(-10);
-        }
     }
     
     override func viewWillAppear() {
@@ -81,6 +69,12 @@ class OthersViewController: NSViewController {
     func setupUI() {
         tabView.addItems(list)
         view.addSubview(tabView)
+    }
+
+    private func viewWindowFrame() -> NSRect? {
+        if let frame = view.window?.frame { return frame }
+        if let frame = NSApp.keyWindow?.frame { return frame }
+        return NSApplication.shared.mainWindow?.frame
     }
 }
 

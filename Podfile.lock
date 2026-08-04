@@ -13,7 +13,7 @@ PODS:
   - SnapKit (5.7.1)
   - SnapKitExtend (1.1.0):
     - SnapKit
-  - SwiftExpand (8.1.1)
+  - SwiftExpand (8.2.0)
   - Then (3.0.0)
   - YYModel (1.0.4)
 
@@ -26,7 +26,7 @@ DEPENDENCIES:
   - RxSwift
   - SnapKit
   - SnapKitExtend
-  - SwiftExpand
+  - SwiftExpand (from `../SwiftExpand`)
   - Then
   - YYModel
 
@@ -41,9 +41,12 @@ SPEC REPOS:
     - RxSwift
     - SnapKit
     - SnapKitExtend
-    - SwiftExpand
     - Then
     - YYModel
+
+EXTERNAL SOURCES:
+  SwiftExpand:
+    :path: "../SwiftExpand"
 
 SPEC CHECKSUMS:
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
@@ -55,10 +58,10 @@ SPEC CHECKSUMS:
   RxSwift: 31649ace6aceeb422e16ff71c60804f9c3281ed9
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SnapKitExtend: aa30cf37196195fae9c4354686cc7710184ebfcc
-  SwiftExpand: 03d366642f986bf87aca22d80ade9de140d3cab0
+  SwiftExpand: df50c8316111b5688e8a09347dc1fdfb3de4da0e
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 1842a8070b691f6be1132095a0f7cd98fdfafc81
+PODFILE CHECKSUM: 552b8090594589e591f8ac36c50cd3e775c50383
 
 COCOAPODS: 1.13.0

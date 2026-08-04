@@ -10,7 +10,7 @@ import Cocoa
 import SwiftExpand
 
 
-class NNButtonStudyController: NSViewController {
+@objcMembers class NNButtonStudyController: NSViewController {
     
     lazy var stackView: NSStackView = {
         //创建StackView
@@ -75,7 +75,7 @@ class NNButtonStudyController: NSViewController {
         view.setTitle("highlighted", for: .highlighted)
         
         view.wantsLayer = true
-        view.layer?.borderColor = view.titleColor.cgColor
+        view.layer?.borderColor = view.titleColor?.cgColor
         view.layer?.borderWidth = 1
         view.layer?.cornerRadius = 10
         view.isEnabled = false
@@ -129,10 +129,10 @@ class NNButtonStudyController: NSViewController {
 //        view.setBackgroundImage(NSImage(color: NSColor.white), for: .normal)
         
         view.setBorderColor(view.titleColor, for: .normal)
-        view.setBorderWidth(3, for: .normal)
-        view.setBorderWidth(5, for: .hover)
+        view.setBorderWidth(NSNumber(value: 3), for: .normal)
+        view.setBorderWidth(NSNumber(value: 5), for: .hover)
 
-        view.setCornerRadius(8, for: .normal)
+        view.setCornerRadius(NSNumber(value: 8), for: .normal)
 
 //        view.wantsLayer = true
 //        view.layer?.borderColor = NSColor.red.cgColor

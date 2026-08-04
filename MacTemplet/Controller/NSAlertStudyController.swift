@@ -75,7 +75,7 @@ enum IconSize: Int, CaseIterable {
     case oneThousandAndTwentyFour = 1024
 }
 
-class NSAlertStudyController: NSViewController {
+@objcMembers class NSAlertStudyController: NSViewController {
 
     private var sizesToReduce = IconSize.allCases
 

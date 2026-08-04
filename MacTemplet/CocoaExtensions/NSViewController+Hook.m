@@ -8,25 +8,33 @@
 
 #import "NSViewController+Hook.h"
 #import "NSObject+Hook.h"
-#import "NNView.h"
+#import "MacTemplet-Swift.h"
 
 @implementation NSViewController (Hook)
 
 + (void)initialize{
-    if (self == self.class) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            SwizzleInstanceMethod(self.class, @selector(loadView), @selector(hook_loadView));
-        });
+    // Only swizzle the base class once. `self == self.class` is always true and
+    // would re-swizzle every NSViewController subclass that inherits +initialize.
+    if (self != [NSViewController class]) {
+        return;
     }
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        SwizzleInstanceMethod([NSViewController class], @selector(loadView), @selector(hook_loadView));
+    });
 }
 
 - (void)hook_loadView{
-    NSWindow *window = NSApplication.sharedApplication.mainWindow;
-    self.view = [[NNView alloc]initWithFrame:window.frame];
+    // Use size only — window.frame origin is in screen space and must not be
+    // applied as a view frame inside the window hierarchy.
+    NSWindow *window = NSApplication.sharedApplication.mainWindow ?: NSApplication.sharedApplication.keyWindow;
+    NSSize size = window ? window.contentLayoutRect.size : NSMakeSize(900, 600);
+    if (size.width < 1 || size.height < 1) {
+        size = NSMakeSize(900, 600);
+    }
+    self.view = [[NNView alloc] initWithFrame:NSMakeRect(0, 0, size.width, size.height)];
     self.view.wantsLayer = true;
+    self.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
 }
-
-
 
 @end

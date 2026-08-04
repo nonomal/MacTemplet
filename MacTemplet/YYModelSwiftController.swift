@@ -11,7 +11,7 @@ import SwiftExpand
 import SnapKit
 import SnapKitExtend
 
-class YYModelSwiftController: NSViewController {
+@objcMembers class YYModelSwiftController: NSViewController {
     
     lazy var textView: NNTextView = {
         let view = NNTextView.create(.zero)

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class NNSplitViewController: NSViewController {
+@objcMembers class NNSplitViewController: NSViewController {
     
     lazy var splitView: NSSplitView = {
         let splitView = NSSplitView(frame: view.bounds)

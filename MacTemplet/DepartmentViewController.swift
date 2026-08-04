@@ -7,11 +7,13 @@
 //
 
 import Cocoa
+import SwiftExpand
 
 class DepartmentViewController: NSViewController {
     override func loadView() {
         // 设置 ViewController 大小同 mainWindow
-        guard let windowRect = NSApplication.shared.mainWindow?.frame else { return }
+        let windowRect = NSApplication.shared.mainWindow?.frame
+            ?? NSRect(x: 0, y: 0, width: NSScreen.main!.frame.width * 0.4, height: NSScreen.main!.frame.height * 0.4)
         view = NSView(frame: windowRect)
         view.wantsLayer = true
     }
@@ -31,7 +33,8 @@ class DepartmentViewController: NSViewController {
 class AccountViewController: NSViewController {
     override func loadView() {
         // 设置 ViewController 大小同 mainWindow
-        guard let windowRect = NSApplication.shared.mainWindow?.frame else { return }
+        let windowRect = NSApplication.shared.mainWindow?.frame
+            ?? NSRect(x: 0, y: 0, width: NSScreen.main!.frame.width * 0.5, height: NSScreen.main!.frame.height * 0.5)
         view = NSView(frame: windowRect)
         view.wantsLayer = true
     }
@@ -50,7 +53,8 @@ class AccountViewController: NSViewController {
 class EmployeeViewController: NSViewController {
     override func loadView() {
         // 设置 ViewController 大小同 mainWindow
-        guard let windowRect = NSApplication.shared.mainWindow?.frame else { return }
+        let windowRect = NSApplication.shared.mainWindow?.frame
+            ?? NSRect(x: 0, y: 0, width: NSScreen.main!.frame.width * 0.6, height: NSScreen.main!.frame.height * 0.6)
         view = NSView(frame: windowRect)
         view.wantsLayer = true
     }

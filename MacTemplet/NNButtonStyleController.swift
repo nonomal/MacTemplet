@@ -10,7 +10,7 @@ import Cocoa
 
 import SwiftExpand
 
-class NNButtonStyleController: NSViewController {
+@objcMembers class NNButtonStyleController: NSViewController {
     
     lazy var flowLayout: NSCollectionViewFlowLayout = {
         let layout = NSCollectionViewFlowLayout()

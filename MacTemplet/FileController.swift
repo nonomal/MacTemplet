@@ -9,7 +9,7 @@
 import Cocoa
 import SwiftExpand
 
-class FileController: NSViewController {
+@objcMembers class FileController: NSViewController {
      
     override func viewDidLoad() {
         super.viewDidLoad()

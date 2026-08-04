@@ -13,7 +13,7 @@ class NNTabViewController: NSWindowController {
 
 //    var toolbar: NSToolbar?
     lazy var toolbar: NSToolbar = {
-        let toolbar = NSToolbar(identifier:"ScreenNameToolbarIdentifier")
+        let toolbar = NSToolbar(identifier: "TheToolbarIdentifier")
         toolbar.allowsUserCustomization = true
         toolbar.delegate = self
         return toolbar
@@ -196,8 +196,7 @@ extension NNTabViewController: NSToolbarDelegate{
             button.image = iconImage
             button.bezelStyle = .texturedRounded
             button.target = self
-//            button.action = #selector(handleBtnSelected(_:))
-            button.action = Selector(("handleBtnSelected:"))
+            button.action = #selector(handleBtnSelected(_:))
 
             toolbarItem = NSToolbarItem(itemIdentifier: itemIdentifier)
             toolbarItem.label = itemDict["title"]!
